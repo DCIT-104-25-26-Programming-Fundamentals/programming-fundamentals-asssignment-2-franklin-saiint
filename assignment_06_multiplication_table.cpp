@@ -14,6 +14,7 @@ void printTablesUpToN(int n) {
         for (int i = 1; i <= 12; ++i) {
             cout << table << " x " << i << " = " << (table * i) << endl;
         }
+
         if (table < n) {
             cout << "---------------------------" << endl;
         }
@@ -21,9 +22,20 @@ void printTablesUpToN(int n) {
 }
 
 int main() {
+    int number;
     int n;
 
-    cout << "Enter a number: ";
+    cout << "Enter a number for Part A: ";
+    cin >> number;
+
+    if (number <= 0) {
+        cout << "Error: The number must be a positive integer." << endl;
+        return 0;
+    }
+
+    printSingleTable(number);
+
+    cout << "\nEnter a number N for Part B: ";
     cin >> n;
 
     if (n <= 0) {
@@ -31,7 +43,6 @@ int main() {
         return 0;
     }
 
-    printSingleTable(n);
     cout << endl;
     printTablesUpToN(n);
 
